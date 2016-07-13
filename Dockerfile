@@ -24,7 +24,6 @@ RUN npm install \
 
 
 # Set environment variables
-
 ENV PORT 3000
 ENV ROOT_URL http://127.0.0.1
 ENV MONGO_URL mongodb://mongodb:27017/$APP_NAME
