@@ -1,0 +1,35 @@
+<template name="streamData">
+    <div class="panel panel-info">
+        <div class="panel-heading">Stream Values</div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th> </th>
+                    {{#each names}}
+                        <th>{{this}}</th>
+                    {{/each}}
+                </tr>
+                </thead>
+                <tbody>
+                {{#each streams}}
+                    <tr>
+                        <td><strong>{{name}}</strong></td>
+                        {{#each values}}
+                            <td>{{value}}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+
+            <h3>About the data</h3>
+            <p>
+                The data visualized here is nothing more than <strong>mock data</strong>. It's only purpose was to make the visualisations a little more realistic.
+            </p>
+            <p>
+                Interesting is that we're handling <em>100 writes per second</em>. This data gets sent from the Database (MongoDB) to the client, via an open websocket.
+            </p>
+        </div>
+    </div>
+</template>

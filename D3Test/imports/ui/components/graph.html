@@ -1,0 +1,19 @@
+<template name="graph">
+    <svg  style="width: 100%" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 500">
+        <path id="streamOne" d="M 0 250 L 1000 250" stroke-width="4" stroke="red" fill="none"></path>
+        <path id="streamTwo" d="M 0 250 L 1000 250" stroke-width="4" stroke="blue" fill="none"></path>
+        <path id="streamThree" d="M 0 250 L 1000 250" stroke-width="4" stroke="yellow" fill="none"></path>
+        <path id="streamFour" d="M 0 250 L 1000 250" stroke-width="4" stroke="green" fill="none"></path>
+        <path id="streamFive" d="M 0 250 L 1000 250" stroke-width="4" stroke="orange" fill="none"></path>
+    </svg>
+    <div class="container" style="padding-bottom: 2em">
+        <div class="text-center">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" id="noGraph">No Graph</button>
+                <button type="button" class="btn btn-default" id="lineGraph">Line Graph</button>
+                <button type="button" class="btn btn-default" id="polarGraph">Polar Graph</button>
+                <button type="button" class="btn btn-default" id="XGraph">X Graph</button>
+            </div>
+        </div>
+    </div>
+</template>
