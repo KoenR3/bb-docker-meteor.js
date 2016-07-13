@@ -1,4 +1,4 @@
-FROM bigboards/base-__arch__
+FROM bigboards/base-x86_64
 
 MAINTAINER Koen Rutten <koen.rutten@vectr.consulting>
 
@@ -8,23 +8,27 @@ RUN apt-get update \
   && apt-get install -y curl
 
 # Install meteor.js
-RUN curl https://install.meteor.com/ | /bin/sh
+RUN curl https://install.meteor.com/ | /bin/sh \
+  && apt-get install -y npm
 
 # Add a meteor app directory
-ADD . /opt/$APP_NAME/app
+ADD /D3Test /opt/$APP_NAME
 
 # Set working directory
-WORKDIR /opt/$APP_NAME/app/programs/server
+WORKDIR /opt/$APP_NAME/
 
 # Install node packet manager
-RUN npm install
+RUN npm install \
+  && rm -rf /var/lib/apt/lists/*
+
+
 
 # Set environment variables
-WORKDIR  /opt/$APP_NAME/app
+
 ENV PORT 80
 ENV ROOT_URL http://127.0.0.1
 ENV MONGO_URL mongodb://mongo_instance:27017/$APP_NAME
 
 EXPOSE 80
 
-CMD node ./main.js
+CMD meteor
