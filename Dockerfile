@@ -12,7 +12,7 @@ RUN curl https://install.meteor.com/ | /bin/sh \
   && apt-get install -y npm
 
 # Add a meteor app directory
-ADD /D3Test /opt/$APP_NAME
+COPY /D3Test /opt/$APP_NAME
 
 # Set working directory
 WORKDIR /opt/$APP_NAME/
@@ -25,10 +25,10 @@ RUN npm install \
 
 # Set environment variables
 
-ENV PORT 80
+ENV PORT 3000
 ENV ROOT_URL http://127.0.0.1
 ENV MONGO_URL mongodb://mongo_instance:27017/$APP_NAME
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD meteor
