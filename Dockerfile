@@ -12,7 +12,7 @@ RUN curl https://install.meteor.com/ | /bin/sh \
   && apt-get install -y npm
 
 # Add a meteor app directory
-ADD /D3Test /opt/$APP_NAME
+COPY /D3Test /opt/$APP_NAME
 
 # Set working directory
 WORKDIR /opt/$APP_NAME/
