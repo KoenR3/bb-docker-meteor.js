@@ -8,7 +8,8 @@ ENV MONGO_USER admin
 ENV MONGO_PASS vectrtest
 ENV PORT 3000
 ENV ROOT_URL http://127.0.0.1
-ENV MONGO_URL mongodb://$MONGO_USER:$MONGO_PASS@mongodb:27017/$APP_NAME
+#ENV MONGO_URL mongodb://$MONGO_USER:$MONGO_PASS@mongodb:27017/$APP_NAME
+ENV MONGO_URL mongodb://mongodb:27017/$APP_NAME
 
 RUN apt-get update \
   && apt-get install -y curl
