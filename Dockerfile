@@ -4,8 +4,8 @@ MAINTAINER Koen Rutten <koen.rutten@vectr.consulting>
 
 # Set environment variables
 ENV APP_NAME HALTest
-ENV MONGO_USER
-ENV MONGO_PASS
+ENV MONGO_USER admin
+ENV MONGO_PASS vectrtest
 ENV PORT 3000
 ENV ROOT_URL http://127.0.0.1
 ENV MONGO_URL mongodb://$MONGO_USER:$MONGO_PASS@mongodb:27017/$APP_NAME
